@@ -1,0 +1,12 @@
+#include <iostream>
+int& Count()
+{
+	static int n = 0;//static
+	n++;
+	return n;
+}
+int main()
+{
+	int& ret = Count();
+	return 0;
+}
