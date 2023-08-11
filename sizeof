@@ -1,0 +1,14 @@
+void updateSunshine() {
+    int ballMax = sizeof(balls) / sizeof(balls[0]);
+ 
+    for (int i = 0; i < ballMax; i++) {
+        if (balls[i].used) {
+            balls[i].frameIndex = (balls[i].frameIndex + 1) % 29;
+            if(balls[i].timer == 0) balls[i].y += 2;
+            if (balls[i].y >= balls[i].destY) {
+                balls[i].timer++;
+                if (balls[i].timer > 100) balls[i].used = false;
+            }
+        }
+    }
+}
